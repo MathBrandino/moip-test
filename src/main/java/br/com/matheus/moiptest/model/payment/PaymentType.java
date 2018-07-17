@@ -1,4 +1,4 @@
-package br.com.matheus.moiptest.model;
+package br.com.matheus.moiptest.model.payment;
 
 import java.math.BigDecimal;
 

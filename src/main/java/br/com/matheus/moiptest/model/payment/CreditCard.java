@@ -1,4 +1,8 @@
-package br.com.matheus.moiptest.model;
+package br.com.matheus.moiptest.model.payment;
+
+import br.com.matheus.moiptest.model.payment.processes.InvalidCardResponseProcess;
+import br.com.matheus.moiptest.model.payment.processes.ResponseProcess;
+import br.com.matheus.moiptest.model.payment.processes.ValidCardResponseProcess;
 
 import java.math.BigDecimal;
 
