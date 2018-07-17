@@ -1,14 +1,20 @@
 package br.com.matheus.moiptest.model;
 
+import br.com.matheus.moiptest.infra.LocalDateJsonConfigurator;
+
 import java.time.LocalDate;
 
 import org.hibernate.validator.constraints.Range;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class Card {
 
     private String name;
     private Long number;
+
+    @JsonDeserialize(using = LocalDateJsonConfigurator.LocalDateDeserializer.class)
     private LocalDate expirationDate;
+
     @Range(min = 0, max = 999, message = "CVV inválido")
     private Integer cvv;
 
@@ -52,12 +58,16 @@ public class Card {
     }
 
     @Deprecated
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = LocalDate.parse(expirationDate);
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     @Deprecated
     public void setCvv(Integer cvv) {
         this.cvv = cvv;
+    }
+
+    public boolean isValid() {
+        return expirationDate.isAfter(LocalDate.now());
     }
 }

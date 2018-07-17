@@ -21,4 +21,6 @@ public abstract class Payment {
     public PaymentType getType() {
         return type;
     }
+
+    public abstract ResponseProcess process();
 }

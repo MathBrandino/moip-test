@@ -7,4 +7,9 @@ public class Boleto extends Payment {
     public Boleto(BigDecimal amount) {
         super(amount, PaymentType.BOLETO);
     }
+
+    @Override
+    public ResponseProcess process() {
+        return new BoletoResponseProcess();
+    }
 }

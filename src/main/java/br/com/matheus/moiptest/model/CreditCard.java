@@ -15,4 +15,10 @@ public class CreditCard extends Payment {
     public Card getCard() {
         return card;
     }
+
+    @Override
+    public ResponseProcess process() {
+
+        return card.isValid() ? new ValidCardResponseProcess() : new InvalidCardResponseProcess();
+    }
 }
