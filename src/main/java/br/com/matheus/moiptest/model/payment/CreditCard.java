@@ -12,7 +12,7 @@ public class CreditCard extends Payment {
     private Card card;
 
     public CreditCard(BigDecimal amount, Card card) {
-        super(amount, PaymentType.CARD);
+        super(amount);
         this.card = card;
     }
 
