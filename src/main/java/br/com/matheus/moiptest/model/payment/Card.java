@@ -2,11 +2,13 @@ package br.com.matheus.moiptest.model.payment;
 
 import br.com.matheus.moiptest.infra.LocalDateJsonConfigurator;
 
+import javax.persistence.Embeddable;
 import java.time.LocalDate;
 
 import org.hibernate.validator.constraints.Range;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+@Embeddable
 public class Card {
 
     private String name;
