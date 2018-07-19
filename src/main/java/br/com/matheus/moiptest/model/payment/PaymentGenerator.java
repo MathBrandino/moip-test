@@ -1,4 +1,4 @@
-package br.com.matheus.moiptest.model.dto;
+package br.com.matheus.moiptest.model.payment;
 
 import br.com.matheus.moiptest.model.payment.Card;
 import br.com.matheus.moiptest.model.payment.Payment;
@@ -7,19 +7,19 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
-class PaymentGenerator {
+public class PaymentGenerator {
     private static final String PACKAGE = "br.com.matheus.moiptest.model.payment.";
     private final String type;
     private final BigDecimal amount;
     private final Card card;
 
-    PaymentGenerator(String type, BigDecimal amount, Card card) {
+    public PaymentGenerator(String type, BigDecimal amount, Card card) {
         this.type = type;
         this.amount = amount;
         this.card = card;
     }
 
-    Payment createPayment() {
+    public Payment createPayment() {
         try {
 
             Class<Payment> clazz = (Class<Payment>) Class.forName(PACKAGE + type);
