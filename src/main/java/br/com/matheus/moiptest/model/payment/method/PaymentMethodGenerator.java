@@ -4,19 +4,19 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 
-public class PaymentGenerator {
-    private static final String PACKAGE = "br.com.matheus.moiptest.model.payment.";
+public class PaymentMethodGenerator {
+    private static final String PACKAGE = "br.com.matheus.moiptest.model.payment.method.";
     private final String type;
     private final BigDecimal amount;
     private final Card card;
 
-    public PaymentGenerator(String type, BigDecimal amount, Card card) {
+    public PaymentMethodGenerator(String type, BigDecimal amount, Card card) {
         this.type = type;
         this.amount = amount;
         this.card = card;
     }
 
-    public PaymentMethod createPayment() {
+    public PaymentMethod createPaymentMethod() {
         try {
 
             Class<PaymentMethod> clazz = (Class<PaymentMethod>) Class.forName(PACKAGE + type);
