@@ -1,4 +1,4 @@
-package br.com.matheus.moiptest.model.payment;
+package br.com.matheus.moiptest.model.payment.method;
 
 import br.com.matheus.moiptest.infra.LocalDateJsonConfigurator;
 

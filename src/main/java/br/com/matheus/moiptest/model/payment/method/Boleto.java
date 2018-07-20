@@ -1,4 +1,4 @@
-package br.com.matheus.moiptest.model.payment;
+package br.com.matheus.moiptest.model.payment.method;
 
 import br.com.matheus.moiptest.model.payment.processes.BoletoResponseProcess;
 import br.com.matheus.moiptest.model.payment.processes.ResponseProcess;
@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import java.math.BigDecimal;
 
 @Entity
-public class Boleto extends Payment {
+public class Boleto extends PaymentMethod {
 
     public Boleto(BigDecimal amount) {
         super(amount);

@@ -1,7 +1,4 @@
-package br.com.matheus.moiptest.model.payment;
-
-import br.com.matheus.moiptest.model.payment.Card;
-import br.com.matheus.moiptest.model.payment.Payment;
+package br.com.matheus.moiptest.model.payment.method;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -19,19 +16,19 @@ public class PaymentGenerator {
         this.card = card;
     }
 
-    public Payment createPayment() {
+    public PaymentMethod createPayment() {
         try {
 
-            Class<Payment> clazz = (Class<Payment>) Class.forName(PACKAGE + type);
-            Payment payment;
+            Class<PaymentMethod> clazz = (Class<PaymentMethod>) Class.forName(PACKAGE + type);
+            PaymentMethod paymentMethod;
             if (type.equals("Boleto")) {
-                Constructor<Payment> constructor = clazz.getConstructor(BigDecimal.class);
-                payment = constructor.newInstance(amount);
+                Constructor<PaymentMethod> constructor = clazz.getConstructor(BigDecimal.class);
+                paymentMethod = constructor.newInstance(amount);
             } else {
-                Constructor<Payment> constructor = clazz.getConstructor(BigDecimal.class, Card.class);
-                payment = constructor.newInstance(amount, card);
+                Constructor<PaymentMethod> constructor = clazz.getConstructor(BigDecimal.class, Card.class);
+                paymentMethod = constructor.newInstance(amount, card);
             }
-            return payment;
+            return paymentMethod;
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {

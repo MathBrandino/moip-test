@@ -1,36 +1,48 @@
 package br.com.matheus.moiptest.model.payment;
 
-import br.com.matheus.moiptest.model.payment.processes.ResponseProcess;
+import br.com.matheus.moiptest.model.buyer.Buyer;
+import br.com.matheus.moiptest.model.client.Client;
+import br.com.matheus.moiptest.model.payment.method.PaymentMethod;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Payment {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    private BigDecimal amount;
+    @OneToOne
+    private PaymentMethod paymentMethod;
 
+    @ManyToOne
+    private Buyer buyer;
 
-    Payment(BigDecimal amount) {
-        this.amount = amount;
+    @ManyToOne
+    private Client client;
+
+    public Payment(PaymentMethod paymentMethod, Buyer buyer, Client client) {
+        this.paymentMethod = paymentMethod;
+        this.buyer = buyer;
+        this.client = client;
     }
 
-    public BigDecimal getAmount() {
-        return amount;
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
     }
 
+    public Buyer getBuyer() {
+        return buyer;
+    }
 
-    public abstract ResponseProcess process();
+    public Client getClient() {
+        return client;
+    }
 }

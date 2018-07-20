@@ -1,4 +1,4 @@
-package br.com.matheus.moiptest.model.payment;
+package br.com.matheus.moiptest.model.payment.method;
 
 import br.com.matheus.moiptest.model.payment.processes.InvalidCardResponseProcess;
 import br.com.matheus.moiptest.model.payment.processes.ResponseProcess;
@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import java.math.BigDecimal;
 
 @Entity
-public class CreditCard extends Payment {
+public class CreditCard extends PaymentMethod {
 
     @Embedded
     private Card card;
