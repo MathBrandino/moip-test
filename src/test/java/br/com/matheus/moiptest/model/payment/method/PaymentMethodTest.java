@@ -73,7 +73,6 @@ public class PaymentMethodTest {
     }
 
 
-
     @Test
     public void shouldShowSomeNumberResponseWhenPaymentMethodIsBoleto() {
 
@@ -95,7 +94,7 @@ public class PaymentMethodTest {
     }
 
     @Test
-    public void shouldCrashWhenAmountIsInvalid(){
+    public void shouldCrashWhenAmountIsInvalid() {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Valor deve ser maior que zero");
@@ -105,7 +104,7 @@ public class PaymentMethodTest {
 
 
     @Test
-    public void shouldCrashWhenAmountIsInvalidInLimit(){
+    public void shouldCrashWhenAmountIsInvalidInLimit() {
 
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Valor deve ser maior que zero");
@@ -113,6 +112,14 @@ public class PaymentMethodTest {
         new Boleto(zero);
     }
 
+
+    @Test
+    public void shouldCrashWhenCardIsNotPassed() {
+
+        thrown.expect(IllegalArgumentException.class);
+
+        new CreditCard(zero, null);
+    }
 
 
 }
