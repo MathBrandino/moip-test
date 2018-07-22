@@ -17,7 +17,7 @@ public class Card {
     @JsonDeserialize(using = LocalDateJsonConfigurator.LocalDateDeserializer.class)
     private LocalDate expirationDate;
 
-    @Range(min = 0, max = 999, message = "CVV inválido")
+    @Range(min = 1, max = 999, message = "CVV inválido")
     private Integer cvv;
 
 
@@ -26,7 +26,10 @@ public class Card {
 
     }
 
-    public Card(String name, Long number, LocalDate expirationDate, Integer cvv) {
+    Card(String name, Long number, LocalDate expirationDate, Integer cvv) {
+
+        if (cvv <= 0 || cvv >= 1000) throw new IllegalArgumentException("CVV inválido");
+
         this.name = name;
         this.number = number;
         this.expirationDate = expirationDate;
