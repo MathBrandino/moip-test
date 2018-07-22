@@ -70,6 +70,7 @@ public class Card {
     }
 
     public boolean isValid() {
-        return expirationDate.isAfter(LocalDate.now());
+        LocalDate today = LocalDate.now();
+        return expirationDate.isAfter(today) || expirationDate.isEqual(today);
     }
 }
