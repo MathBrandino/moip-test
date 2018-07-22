@@ -3,7 +3,7 @@ package br.com.matheus.moiptest.model.payment.method;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -44,7 +44,7 @@ public class PaymentMethodTest {
 
         String response = creditCard.process().getResponse();
 
-        Assert.assertEquals("false", response);
+        assertEquals("false", response);
     }
 
 
@@ -56,7 +56,7 @@ public class PaymentMethodTest {
 
         String response = creditCard.process().getResponse();
 
-        Assert.assertEquals("true", response);
+        assertEquals("true", response);
     }
 
 
@@ -69,7 +69,7 @@ public class PaymentMethodTest {
 
         String response = creditCard.process().getResponse();
 
-        Assert.assertEquals("true", response);
+        assertEquals("true", response);
     }
 
 
@@ -80,7 +80,7 @@ public class PaymentMethodTest {
         Boleto boleto = new Boleto(amountValid);
         String response = boleto.process().getResponse();
 
-        Assert.assertEquals(Integer.class, Integer.valueOf(response).getClass());
+        assertEquals(Integer.class, Integer.valueOf(response).getClass());
     }
 
 
