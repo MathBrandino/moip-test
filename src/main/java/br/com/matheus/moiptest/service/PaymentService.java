@@ -62,11 +62,7 @@ public class PaymentService {
     private boolean notExist(Client client) {
         Optional<Client> clientSearched = clientDAO.findClientById(client.getId());
 
-        if (!clientSearched.isPresent()) {
-
-            return true;
-        }
-        return false;
+        return !clientSearched.isPresent();
     }
 
     private Buyer saveIfNecessary(Buyer buyer) {
