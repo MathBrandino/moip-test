@@ -16,6 +16,7 @@ public class CreditCard extends PaymentMethod {
 
     public CreditCard(BigDecimal amount, Card card) {
         super(amount);
+        if (card == null) throw new IllegalArgumentException("O cartão precisa ser passado");
         this.card = card;
     }
 
