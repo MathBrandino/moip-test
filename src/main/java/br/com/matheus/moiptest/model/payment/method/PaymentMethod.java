@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
@@ -20,10 +21,14 @@ public abstract class PaymentMethod {
     private Long id;
 
     @NotNull
+    @Min(1)
     private BigDecimal amount;
 
 
     PaymentMethod(BigDecimal amount) {
+        if (amount == null) throw new IllegalArgumentException("Valor não deve ser nulo");
+        if (amount.compareTo(BigDecimal.ZERO) <= 0) throw new IllegalArgumentException("Valor deve ser maior que zero");
+
         this.amount = amount;
     }
 
