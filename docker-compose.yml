@@ -1,0 +1,25 @@
+version: "2"
+services:
+  api:
+    image: mathbrandino/moiptest
+    depends_on:
+      - database
+    ports:
+      - 80:8080
+
+    restart: on-failure
+
+    environment:
+      - DATABASE_NAME=moiptest
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=
+      - DATABASE_HOST=database
+
+
+  database:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=moiptest
+      - MYSQL_USER=root
