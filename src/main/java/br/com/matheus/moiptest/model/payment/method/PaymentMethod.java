@@ -25,6 +25,10 @@ public abstract class PaymentMethod {
     private BigDecimal amount;
 
 
+    @Deprecated
+    PaymentMethod() {
+    }
+
     PaymentMethod(BigDecimal amount) {
         if (amount == null) throw new IllegalArgumentException("Valor não deve ser nulo");
         if (amount.compareTo(BigDecimal.ZERO) <= 0) throw new IllegalArgumentException("Valor deve ser maior que zero");

@@ -28,6 +28,10 @@ public class Payment {
     @ManyToOne
     private Client client;
 
+
+    @Deprecated
+    Payment(){}
+
     public Payment(PaymentMethod paymentMethod, Buyer buyer, Client client) {
         this.paymentMethod = paymentMethod;
         this.buyer = buyer;

@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 @Entity
 public class Boleto extends PaymentMethod {
 
+    @Deprecated
+    Boleto() {
+    }
+
     public Boleto(BigDecimal amount) {
         super(amount);
     }

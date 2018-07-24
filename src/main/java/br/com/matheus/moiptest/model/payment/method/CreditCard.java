@@ -14,6 +14,11 @@ public class CreditCard extends PaymentMethod {
     @Embedded
     private Card card;
 
+    @Deprecated
+    CreditCard() {
+
+    }
+
     public CreditCard(BigDecimal amount, Card card) {
         super(amount);
         if (card == null) throw new IllegalArgumentException("O cartão precisa ser passado");
