@@ -124,7 +124,7 @@ Tendo algum cliente já salvo no banco, você pode enviar o
          "buyer": {
            "name": "Nome",
            "cpf": "CPF Válido",
-           "email": "Email Váldio"
+           "email": "Email Válido"
          },
          "payment": {
            "amount": 500.00,
