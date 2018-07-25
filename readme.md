@@ -63,7 +63,7 @@ Antes de efetuar algum pagamento é necessário ter um
  * Salvando um cliente :
  
     - Para salvar um cliente você precisa fazer uma requisição 
-    do tipo `Post` para `/client/` com o seguinte conteúdo :
+    do tipo `Post` para `/client/` com o seguinte conteúdo:
     
     ```
     {
@@ -73,7 +73,7 @@ Antes de efetuar algum pagamento é necessário ter um
     
  * Consultando um cliente :
  
-    - Para consultador os dados de algum cliente basta fazer uma 
+    - Para consultar os dados de algum cliente basta fazer uma 
     requisição do tipo `Get` para `/client/{id}` substituindo `{id}`
     pelo id a ser buscado no banco.
     
@@ -84,10 +84,10 @@ Tendo algum cliente já salvo no banco, você pode enviar o
  pagamento para ser processado.
 
 
-   * Enviando o pagamento :
+   * Enviando o pagamento:
    
         - Para enviar o pagamento você precisa fazer uma requisição
-        do tipo `Post` para `/payment/` com o seguintes conteúdos :
+        do tipo `Post` para `/payment/` com o seguintes conteúdos:
         
         * Boleto
         
