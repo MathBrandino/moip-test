@@ -6,7 +6,7 @@
     <groupId>br.com.matheus</groupId>
     <artifactId>moip-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>moip-test</name>
     <description>projeto para teste do moip</description>
@@ -107,6 +107,12 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
@@ -128,7 +134,7 @@
                 <configuration>
                     <repository>mathbrandino/moiptest</repository>
                     <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                        <JAR_FILE>${project.build.finalName}.war</JAR_FILE>
                     </buildArgs>
                 </configuration>
 
