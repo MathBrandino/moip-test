@@ -18,7 +18,9 @@ o sistema como um todo:
 docker-compose up
 ``` 
 
-Caso você precise do arquivo: 
+Para o comando anterior funcionar, você precisa estar na mesma pasta que o arquivo `docker-compose.yml`
+está. Caso queria apenas o arquivo para rodar o sistema, sem o código, pode cria-lo com o seguinte 
+ conteudo:
 
 ```
 
@@ -100,7 +102,7 @@ Tendo algum cliente já salvo no banco, você pode enviar o
           "buyer": {
             "name": "Nome",
             "cpf": "CPF Válido",
-            "email": "Email Váldio"
+            "email": "Email Válido"
           },
           "payment": {
             "amount": 500.00,
